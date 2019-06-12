@@ -2,38 +2,22 @@
 #include "PlayScene.h"
 #include "SceneCommons.h"
 #include "Framework/SceneManager.h"
+#include "Framework/DebugTools/DebugCameraWrapper.h"
+#include "Framework/DebugTools/GridFloorWrapper.h"
+
+using namespace DirectX;
+using namespace DirectX::SimpleMath;
 
 void PlayScene::Build(GameContext& context)
 {
-	auto text = std::make_shared<FontObject>(L"Resources/Fonts/logofont.spritefont", L"プレイシーン");
-	context << text;
+	context.GetCamera().view = Matrix::CreateLookAt(Vector3(0, 5, 10), Vector3::Zero, Vector3::Up);
 
-	class C : public GameObject
-	{
-		float lastTime;
-		std::shared_ptr<FontObject> m_text;
+	context << std::make_shared<DebugCameraWrapper>();
+	context << std::make_shared<GridFloorWrapper>();
 
-	public:
-		C(const std::shared_ptr<FontObject>& text)
-			: m_text(text) {}
-
-		void Initialize(GameContext& context)
-		{
-			lastTime = context.GetTimer().GetTotalSeconds();
-		}
-
-		void Update(GameContext& context)
-		{
-			float time = context.GetTimer().GetTotalSeconds() - lastTime;
-
-			wchar_t str[256];
-			std::swprintf(str, L"プレイシーン: 残り%.2f秒", 3 - time);
-
-			m_text->SetText(str);
-
-			if (time > 3.f)
-				context.GetSceneManager().LoadScene("ResultScene");
-		}
-	};
-	context << std::make_shared<C>(text);
+	auto bit = std::make_shared<GeometricObject>(
+		[](GameContext& context) { return GeometricPrimitive::CreateTeapot(context.GetDR().GetD3DDeviceContext()); },
+		Color(Colors::Blue)
+		);
+	context << bit;
 }

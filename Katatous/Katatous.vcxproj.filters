@@ -20,6 +20,9 @@
     <Filter Include="Resources\Icons">
       <UniqueIdentifier>{d6d1ab5d-e663-48ef-ab5d-e9d80e50a4ab}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Framework\DebugTools">
+      <UniqueIdentifier>{b5498548-590e-41a8-b1f7-e928560f1c99}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -74,6 +77,18 @@
     <ClInclude Include="Game\TitleScene.h">
       <Filter>Game</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\アルゴリズム\TileMap3D\TileMap3D\Framework\DebugTools\GridFloor.h">
+      <Filter>Framework\DebugTools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\アルゴリズム\TileMap3D\TileMap3D\Framework\DebugTools\GridFloorWrapper.h">
+      <Filter>Framework\DebugTools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\アルゴリズム\TileMap3D\TileMap3D\Framework\DebugTools\DebugCamera.h">
+      <Filter>Framework\DebugTools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\アルゴリズム\TileMap3D\TileMap3D\Framework\DebugTools\DebugCameraWrapper.h">
+      <Filter>Framework\DebugTools</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
@@ -113,6 +128,18 @@
     </ClCompile>
     <ClCompile Include="Game\TitleScene.cpp">
       <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\アルゴリズム\TileMap3D\TileMap3D\Framework\DebugTools\GridFloorWrapper.cpp">
+      <Filter>Framework\DebugTools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\アルゴリズム\TileMap3D\TileMap3D\Framework\DebugTools\DebugCamera.cpp">
+      <Filter>Framework\DebugTools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\アルゴリズム\TileMap3D\TileMap3D\Framework\DebugTools\DebugCameraWrapper.cpp">
+      <Filter>Framework\DebugTools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\アルゴリズム\TileMap3D\TileMap3D\Framework\DebugTools\GridFloor.cpp">
+      <Filter>Framework\DebugTools</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

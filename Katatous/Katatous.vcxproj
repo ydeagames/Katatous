@@ -166,6 +166,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\アルゴリズム\TileMap3D\TileMap3D\Framework\DebugTools\DebugCamera.h" />
+    <ClInclude Include="..\..\..\アルゴリズム\TileMap3D\TileMap3D\Framework\DebugTools\DebugCameraWrapper.h" />
+    <ClInclude Include="..\..\..\アルゴリズム\TileMap3D\TileMap3D\Framework\DebugTools\GridFloor.h" />
+    <ClInclude Include="..\..\..\アルゴリズム\TileMap3D\TileMap3D\Framework\DebugTools\GridFloorWrapper.h" />
     <ClInclude Include="Common\DeviceResources.h" />
     <ClInclude Include="Framework\Game.h" />
     <ClInclude Include="Framework\GameContext.h" />
@@ -186,6 +190,10 @@
     <ClInclude Include="Common\StepTimer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\アルゴリズム\TileMap3D\TileMap3D\Framework\DebugTools\DebugCamera.cpp" />
+    <ClCompile Include="..\..\..\アルゴリズム\TileMap3D\TileMap3D\Framework\DebugTools\DebugCameraWrapper.cpp" />
+    <ClCompile Include="..\..\..\アルゴリズム\TileMap3D\TileMap3D\Framework\DebugTools\GridFloor.cpp" />
+    <ClCompile Include="..\..\..\アルゴリズム\TileMap3D\TileMap3D\Framework\DebugTools\GridFloorWrapper.cpp" />
     <ClCompile Include="Common\DeviceResources.cpp" />
     <ClCompile Include="Framework\Game.cpp" />
     <ClCompile Include="Framework\Scene.cpp" />
