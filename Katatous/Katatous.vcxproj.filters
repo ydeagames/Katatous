@@ -23,6 +23,9 @@
     <Filter Include="Framework\DebugTools">
       <UniqueIdentifier>{b5498548-590e-41a8-b1f7-e928560f1c99}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Utilities">
+      <UniqueIdentifier>{3cabf63c-93d3-4911-a9e2-6b44bf879037}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -77,17 +80,56 @@
     <ClInclude Include="Game\TitleScene.h">
       <Filter>Game</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\アルゴリズム\TileMap3D\TileMap3D\Framework\DebugTools\GridFloor.h">
+    <ClInclude Include="Framework\DebugTools\GridFloor.h">
       <Filter>Framework\DebugTools</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\アルゴリズム\TileMap3D\TileMap3D\Framework\DebugTools\GridFloorWrapper.h">
+    <ClInclude Include="Framework\DebugTools\GridFloorWrapper.h">
       <Filter>Framework\DebugTools</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\アルゴリズム\TileMap3D\TileMap3D\Framework\DebugTools\DebugCamera.h">
+    <ClInclude Include="Framework\DebugTools\DebugCamera.h">
       <Filter>Framework\DebugTools</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\アルゴリズム\TileMap3D\TileMap3D\Framework\DebugTools\DebugCameraWrapper.h">
+    <ClInclude Include="Framework\DebugTools\DebugCameraWrapper.h">
       <Filter>Framework\DebugTools</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Component.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\GameCamera.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\MemoryLeakDetector.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\Optional.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\picojson.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\Random.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\Singleton.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\String.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\TypeId.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\AspectUtils.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\Event.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\Input.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\MathUtils.h">
+      <Filter>Utilities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -129,17 +171,32 @@
     <ClCompile Include="Game\TitleScene.cpp">
       <Filter>Game</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\アルゴリズム\TileMap3D\TileMap3D\Framework\DebugTools\GridFloorWrapper.cpp">
+    <ClCompile Include="Framework\DebugTools\GridFloorWrapper.cpp">
       <Filter>Framework\DebugTools</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\アルゴリズム\TileMap3D\TileMap3D\Framework\DebugTools\DebugCamera.cpp">
+    <ClCompile Include="Framework\DebugTools\DebugCamera.cpp">
       <Filter>Framework\DebugTools</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\アルゴリズム\TileMap3D\TileMap3D\Framework\DebugTools\DebugCameraWrapper.cpp">
+    <ClCompile Include="Framework\DebugTools\DebugCameraWrapper.cpp">
       <Filter>Framework\DebugTools</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\アルゴリズム\TileMap3D\TileMap3D\Framework\DebugTools\GridFloor.cpp">
+    <ClCompile Include="Framework\DebugTools\GridFloor.cpp">
       <Filter>Framework\DebugTools</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\GameCamera.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities\Random.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities\AspectUtils.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities\Input.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities\MathUtils.cpp">
+      <Filter>Utilities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -156,5 +213,8 @@
     <Manifest Include="Resources\settings.manifest">
       <Filter>Resources</Filter>
     </Manifest>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\3DPGPropertySheet.props" />
   </ItemGroup>
 </Project>

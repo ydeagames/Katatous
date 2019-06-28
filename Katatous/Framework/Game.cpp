@@ -4,7 +4,8 @@
 
 #include "pch.h"
 #include "Game.h"
-#include "Game/BuildSettings.h"
+#include <Game/BuildSettings.h>
+#include <Utilities/Input.h>
 
 #include <WICTextureLoader.h>
 
@@ -23,8 +24,6 @@ Game::Game() noexcept(false)
 
 	// シーンマネージャー
 	m_sceneManager = std::make_unique<SceneManager>();
-	// シーン
-	m_pKeyboardStateTracker = std::make_unique<Keyboard::KeyboardStateTracker>();
 }
 
 // Initialize the Direct3D resources required to run.
@@ -78,8 +77,8 @@ void Game::Tick()
 // Updates the world.
 void Game::Update(DX::StepTimer const& timer)
 {
-	// キーボードステートトラッカー更新
-	GetKeyboardStateTracker().Update(Keyboard::Get().GetState());
+	// インプット更新
+	Input::Update();
 	// シーン処理
 	GetSceneManager().ProcessScene(*this);
 	// 更新
@@ -211,6 +210,11 @@ void Game::CreateWindowSizeDependentResources()
 		0.01f,
 		10000.0f
 	);
+	// ビューポート行列を作成する
+	GetCamera().viewport = 
+		SimpleMath::Matrix::CreateScale(Vector3(.5f, -.5f, 1.f)) *
+		SimpleMath::Matrix::CreateTranslation(Vector3(.5f, .5f, 0.f)) *
+		SimpleMath::Matrix::CreateScale(Vector3(float(size.right), float(size.bottom), 1.f));
 }
 
 void Game::OnDeviceLost()

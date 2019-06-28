@@ -1,7 +1,11 @@
 #include "pch.h"
 #include "BaseScene.h"
 #include "SceneCommons.h"
-#include "Framework/SceneManager.h"
+#include <Framework/SceneManager.h>
+#include <Framework/DebugTools/DebugCameraWrapper.h>
+#include <Framework/DebugTools/GridFloorWrapper.h>
+#include <Utilities/Input.h>
+#include <Utilities/picojson.h>
 
 using namespace DirectX;
 using namespace DirectX::SimpleMath;

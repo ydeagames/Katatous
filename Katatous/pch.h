@@ -37,6 +37,7 @@
 #include <d3d11_1.h>
 #include <DirectXMath.h>
 #include <DirectXColors.h>
+#include <DirectXCollision.h>
 
 // DXGI
 #if defined(NTDDI_WIN10_RS2)
@@ -53,7 +54,11 @@
 #include <cstdio>
 #include <string>
 #include <iostream>
+#include <sstream>
 #include <iomanip>
+
+#include <algorithm>
+#include <random>
 
 #include <vector>
 #include <list>

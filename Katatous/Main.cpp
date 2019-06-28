@@ -3,8 +3,8 @@
 //
 
 #include "pch.h"
-#include "Framework/Game.h"
-#include "Game/BuildSettings.h"
+#include <Framework/Game.h>
+#include <Game/BuildSettings.h>
 
 // デバッグコンソール
 #include <io.h>
@@ -30,7 +30,7 @@ extern "C"
 static void CreateConsoleWindow() {
 #ifdef _DEBUG
 	AllocConsole();
-	SetConsoleTitleA("ConsoleTitle");
+	SetConsoleTitleA("Debug");
 	typedef struct { char* _ptr; int _cnt; char* _base; int _flag; int _file; int _charbuf; int _bufsiz; char* _tmpfname; } FILE_COMPLETE;
 	*(FILE_COMPLETE*)stdout = *(FILE_COMPLETE*)_fdopen(_open_osfhandle((intptr_t)GetStdHandle(STD_OUTPUT_HANDLE), _O_TEXT), "w");
 	*(FILE_COMPLETE*)stderr = *(FILE_COMPLETE*)_fdopen(_open_osfhandle((intptr_t)GetStdHandle(STD_ERROR_HANDLE), _O_TEXT), "w");

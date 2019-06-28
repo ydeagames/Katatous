@@ -5,10 +5,11 @@
 
 void LogoScene::Build(GameContext& context)
 {
-	auto text = std::make_shared<FontObject>(L"Resources/Fonts/logofont.spritefont", L"ÉçÉSÉVÅ[Éì");
-	context << text;
+	auto obj = GameObject::Create();
+	auto text = obj->AddComponent<FontObject>(L"Resources/Fonts/logofont.spritefont", L"ÉçÉSÉVÅ[Éì");
+	context << obj;
 
-	class A : public GameObject
+	class A : public Component
 	{
 		float lastTime;
 		std::shared_ptr<FontObject> m_text;
@@ -24,7 +25,7 @@ void LogoScene::Build(GameContext& context)
 
 		void Update(GameContext& context)
 		{
-			float time = context.GetTimer().GetTotalSeconds() - lastTime;
+			float time = float(context.GetTimer().GetTotalSeconds()) - lastTime;
 
 			wchar_t str[256];
 			std::swprintf(str, L"ÉçÉSÉVÅ[Éì: %.2fïb", time);
@@ -35,5 +36,7 @@ void LogoScene::Build(GameContext& context)
 				context.GetSceneManager().LoadScene("TitleScene");
 		}
 	};
-	context << std::make_shared<A>(text);
+	auto obj1 = GameObject::Create();
+	auto cmp = obj1->AddComponent<A>(text);
+	context << obj1;
 }

@@ -1,7 +1,7 @@
-﻿#include "Framework/GameObject.h"
+﻿#include <Framework/GameObject.h>
 #include "GridFloor.h"
 
-class GridFloorWrapper : public GameObject
+class GridFloorWrapper : public Component
 {
 	// グリッド床
 	std::unique_ptr<GridFloor> m_pGridFloor;

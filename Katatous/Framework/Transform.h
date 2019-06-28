@@ -1,8 +1,11 @@
 #pragma once
+#include "Component.h"
 
 // Transformクラス
-class Transform
+class Transform : public Component
 {
+	COMPONENT(Component)
+
 public:
 	// コンストラクタ
 	Transform::Transform();

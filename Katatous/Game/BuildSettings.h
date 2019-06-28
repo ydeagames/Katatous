@@ -1,6 +1,5 @@
 #pragma once
-
-#include "Framework/ISceneBuilder.h"
+#include <Framework/ISceneBuilder.h>
 
 class BuildSettings : public ISceneBuilder
 {

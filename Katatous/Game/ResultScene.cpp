@@ -7,10 +7,11 @@ using namespace DirectX;
 
 void ResultScene::Build(GameContext& context)
 {
-	auto text = std::make_shared<FontObject>(L"Resources/Fonts/logofont.spritefont", L"リザルトシーン");
-	context << text;
+	auto obj = GameObject::Create();
+	auto text = obj->AddComponent<FontObject>(L"Resources/Fonts/logofont.spritefont", L"リザルトシーン");
+	context << obj;
 
-	class D : public GameObject
+	class D : public Component
 	{
 		void Update(GameContext& context)
 		{
@@ -18,5 +19,7 @@ void ResultScene::Build(GameContext& context)
 				context.GetSceneManager().LoadScene("TitleScene");
 		}
 	};
-	context << std::make_shared<D>();
+	auto obj2 = GameObject::Create();
+	obj2->AddComponent<D>();
+	context << obj2;
 }
