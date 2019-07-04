@@ -216,5 +216,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\3DPGPropertySheet.props" />
+    <None Include="..\PhysXPropertySheet.props" />
   </ItemGroup>
 </Project>

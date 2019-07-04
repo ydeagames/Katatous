@@ -20,7 +20,7 @@ void LogoScene::Build(GameContext& context)
 
 		void Initialize(GameContext& context)
 		{
-			lastTime = context.GetTimer().GetTotalSeconds();
+			lastTime = float(context.GetTimer().GetTotalSeconds());
 		}
 
 		void Update(GameContext& context)
