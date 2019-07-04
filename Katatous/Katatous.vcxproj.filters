@@ -131,6 +131,9 @@
     <ClInclude Include="Utilities\MathUtils.h">
       <Filter>Utilities</Filter>
     </ClInclude>
+    <ClInclude Include="Framework\PhysXManager.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
@@ -197,6 +200,9 @@
     </ClCompile>
     <ClCompile Include="Utilities\MathUtils.cpp">
       <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\PhysXManager.cpp">
+      <Filter>Framework</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
