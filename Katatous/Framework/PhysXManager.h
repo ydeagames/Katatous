@@ -1,40 +1,45 @@
 #pragma once
+#include "PhysXCommons.h"
 
 class GameContext;
+class PhysXScene;
 
 class PhysXManager
 {
-public:
-	template<typename T>
-	struct px_deleter
-	{
-		void operator()(T* t)
-		{
-			if (t)
-				t->release();
-		}
-	};
-
-	template<typename T>
-	using px_unique_ptr = std::unique_ptr<T, px_deleter<T>>;
-
 private:
 	physx::PxDefaultAllocator			gAllocator;
 	physx::PxDefaultErrorCallback		gErrorCallback;
 
-	px_unique_ptr<physx::PxFoundation>	gFoundation = NULL;
-	px_unique_ptr<physx::PxPhysics>		gPhysics = NULL;
+	px_unique_ptr<physx::PxFoundation>	gFoundation;
+	px_unique_ptr<physx::PxPhysics>		gPhysics;
 
-	px_unique_ptr<physx::PxDefaultCpuDispatcher> gDispatcher = NULL;
-	px_unique_ptr<physx::PxScene>		gScene = NULL;
+	px_unique_ptr<physx::PxDefaultCpuDispatcher> gDispatcher;
+	px_unique_ptr<physx::PxScene>		gScene;
 
-	px_unique_ptr<physx::PxMaterial>	gMaterial = NULL;
+	px_unique_ptr<physx::PxMaterial>	gMaterial;
 
-	px_unique_ptr<physx::PxPvd>			gPvd = NULL;
+	px_unique_ptr<physx::PxPvd>			gPvd;
+	px_unique_ptr<physx::PxPvdTransport>gPvdTransport;
 
 public:
 	PhysXManager();
 	~PhysXManager();
+
+public:
+	physx::PxPhysics* GetPhysics()
+	{
+		return gPhysics.get();
+	}
+
+	physx::PxPvd* GetPvd()
+	{
+		return gPvd.get();
+	}
+
+	physx::PxMaterial* GetDefaultMaterial()
+	{
+		return PxMaterial.get();
+	}
 
 	// ê∂ê¨
 	void Initialize(GameContext& context);
@@ -44,5 +49,8 @@ public:
 	void Render(GameContext& context);
 	// îjä¸
 	void Finalize(GameContext& context);
+
+	// ÉVÅ[ÉìçÏê¨
+	PhysXScene CreateScene();
 };
 
