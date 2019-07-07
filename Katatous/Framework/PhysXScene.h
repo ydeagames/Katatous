@@ -16,6 +16,6 @@ public:
 	// シーンPvd有効化
 	void ActivatePvd();
 	// オブジェクト追加
-	void CreateObject(const physx::PxRigidStatic& obj);
+	void CreateObject(physx::PxActor& obj);
 };
 

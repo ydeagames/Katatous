@@ -7,19 +7,17 @@ class PhysXScene;
 class PhysXManager
 {
 private:
-	physx::PxDefaultAllocator			gAllocator;
-	physx::PxDefaultErrorCallback		gErrorCallback;
+	physx::PxDefaultAllocator						m_allocator;
+	physx::PxDefaultErrorCallback					m_errorCallback;
 
-	px_unique_ptr<physx::PxFoundation>	gFoundation;
-	px_unique_ptr<physx::PxPhysics>		gPhysics;
+	px_unique_ptr<physx::PxFoundation>				m_foundation;
+	px_unique_ptr<physx::PxPhysics>					m_physics;
 
-	px_unique_ptr<physx::PxDefaultCpuDispatcher> gDispatcher;
-	px_unique_ptr<physx::PxScene>		gScene;
+	px_unique_ptr<physx::PxDefaultCpuDispatcher>	m_dispatcher;
+	px_unique_ptr<physx::PxScene>					m_scene;
 
-	px_unique_ptr<physx::PxMaterial>	gMaterial;
-
-	px_unique_ptr<physx::PxPvd>			gPvd;
-	px_unique_ptr<physx::PxPvdTransport>gPvdTransport;
+	px_unique_ptr<physx::PxPvd>						m_pvd;
+	px_unique_ptr<physx::PxPvdTransport>			m_pvdTransport;
 
 public:
 	PhysXManager();
@@ -28,17 +26,12 @@ public:
 public:
 	physx::PxPhysics* GetPhysics()
 	{
-		return gPhysics.get();
+		return m_physics.get();
 	}
 
 	physx::PxPvd* GetPvd()
 	{
-		return gPvd.get();
-	}
-
-	physx::PxMaterial* GetDefaultMaterial()
-	{
-		return PxMaterial.get();
+		return m_pvd.get();
 	}
 
 	// ê∂ê¨

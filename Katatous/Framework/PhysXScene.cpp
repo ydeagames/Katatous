@@ -23,7 +23,7 @@ void PhysXScene::ActivatePvd()
 	}
 }
 
-void PhysXScene::CreateObject(const physx::PxRigidStatic& obj)
+void PhysXScene::CreateObject(physx::PxActor& obj)
 {
 	m_scene->addActor(obj);
 }
