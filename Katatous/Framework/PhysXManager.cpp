@@ -42,11 +42,11 @@ void PhysXManager::Finalize(GameContext& context)
 {
 }
 
-PhysXScene PhysXManager::CreateScene()
+std::unique_ptr<PhysXScene> PhysXManager::CreateScene()
 {
 	PxSceneDesc sceneDesc(m_physics->getTolerancesScale());
 	sceneDesc.gravity = PxVec3(0.0f, -9.81f, 0.0f);
 	sceneDesc.cpuDispatcher = m_dispatcher.get();
 	sceneDesc.filterShader = PxDefaultSimulationFilterShader;
-	return px_unique_ptr<PxScene>(m_physics->createScene(sceneDesc));
+	return std::make_unique<PhysXScene>(px_unique_ptr<PxScene>(m_physics->createScene(sceneDesc)));
 }

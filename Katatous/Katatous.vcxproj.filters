@@ -138,7 +138,7 @@
       <Filter>Framework</Filter>
     </ClInclude>
     <ClInclude Include="Framework\PhysXScene.h">
-      <Filter>Game</Filter>
+      <Filter>Framework</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -211,7 +211,7 @@
       <Filter>Framework</Filter>
     </ClCompile>
     <ClCompile Include="Framework\PhysXScene.cpp">
-      <Filter>Game</Filter>
+      <Filter>Framework</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

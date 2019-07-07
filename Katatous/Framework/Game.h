@@ -18,6 +18,7 @@
 #include "Scene.h"
 #include "SceneManager.h"
 #include "GameCamera.h"
+#include "PhysXManager.h"
 
 // A basic game implementation that creates a D3D11 device and
 // provides a game loop.
@@ -85,6 +86,9 @@ private:
 	// キーボードトラッカー
 	std::unique_ptr<DirectX::Keyboard::KeyboardStateTracker>		m_pKeyboardStateTracker;
 
+	// 物理
+	std::unique_ptr<PhysXManager>			m_physics;
+
 public:
 	// DeviceResource取得
 	DX::DeviceResources& GetDR()
@@ -131,7 +135,7 @@ public:
 	// オブジェクト追加
 	GameContext& operator<<(const std::shared_ptr<GameObject>& obj)
 	{
-		GetScene().gameObjects.push_back(obj);
+		GetScene().AddObject(obj);
 		return *this;
 	}
 
@@ -139,5 +143,11 @@ public:
 	SceneManager& GetSceneManager()
 	{
 		return *m_sceneManager;
+	}
+
+	// 物理マネージャ
+	PhysXManager& GetPhysics()
+	{
+		return *m_physics;
 	}
 };

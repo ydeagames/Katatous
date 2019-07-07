@@ -1,10 +1,11 @@
 #pragma once
 #include "PhysXCommons.h"
+#include "Component.h"
 
 class GameContext;
 class PhysXScene;
 
-class PhysXManager
+class PhysXManager : public Component
 {
 private:
 	physx::PxDefaultAllocator						m_allocator;
@@ -44,6 +45,6 @@ public:
 	void Finalize(GameContext& context);
 
 	// ÉVÅ[ÉìçÏê¨
-	PhysXScene CreateScene();
+	std::unique_ptr<PhysXScene> CreateScene();
 };
 

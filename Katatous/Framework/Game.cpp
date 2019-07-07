@@ -48,6 +48,9 @@ void Game::Initialize(HWND window, int width, int height)
 	m_effectFactory = std::make_unique<DirectX::EffectFactory>(m_deviceResources->GetD3DDevice());
 	// テクスチャの読み込みパス指定
 	m_effectFactory->SetDirectory(L"Resources/Models");
+	// 物理
+	m_physics = std::make_unique<PhysXManager>();
+	m_physics->Initialize(*this);
 
     CreateDeviceDependentResources();
     CreateWindowSizeDependentResources();
@@ -79,6 +82,8 @@ void Game::Update(DX::StepTimer const& timer)
 {
 	// インプット更新
 	Input::Update();
+	// 物理
+	m_physics->Update(*this);
 	// シーン処理
 	GetSceneManager().ProcessScene(*this);
 	// 更新
@@ -101,6 +106,9 @@ void Game::Render()
 
 	// ここから描画
     m_deviceResources->PIXBeginEvent(L"Render");
+
+	// 物理
+	m_physics->Render(*this);
 
     // TODO: Add your rendering code here.
 	GetSceneManager().GetActiveScene().scene->Render(*this);
@@ -220,6 +228,9 @@ void Game::CreateWindowSizeDependentResources()
 void Game::OnDeviceLost()
 {
     // TODO: Add Direct3D resource cleanup here.
+
+	// 物理
+	m_physics->Finalize(*this);
 
 	// 破棄
 	GetSceneManager().GetActiveScene().scene->Finalize(*this);

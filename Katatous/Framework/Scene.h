@@ -1,5 +1,9 @@
 #pragma once
-#include "GameObject.h"
+#include "Component.h"
+
+class GameObject;
+class PhysXScene;
+class GameContext;
 
 // ゲームオブジェクトコンテナ
 class Scene : public Component
@@ -7,6 +11,15 @@ class Scene : public Component
 public:
 	// 子ゲームオブジェクト
 	std::vector<std::shared_ptr<GameObject>> gameObjects;
+	// PhysX
+	std::unique_ptr<PhysXScene> physics;
+
+public:
+	Scene();
+	~Scene();
+
+public:
+	void AddObject(const std::shared_ptr<GameObject>& obj);
 
 public:
 	// 生成

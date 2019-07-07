@@ -6,6 +6,7 @@ class Scene;
 class GameObject;
 class SceneManager;
 class GameCamera;
+class PhysXManager;
 
 // GameContextインターフェイス
 class GameContext
@@ -33,4 +34,6 @@ public:
 	virtual GameContext& operator<<(const std::shared_ptr<GameObject>& obj) = 0;
 	// シーンマネージャを取得
 	virtual SceneManager& GetSceneManager() = 0;
+	// 物理マネージャを取得
+	virtual PhysXManager& GetPhysics() = 0;
 };

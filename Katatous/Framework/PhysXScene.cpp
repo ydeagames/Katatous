@@ -12,6 +12,11 @@ PhysXScene::~PhysXScene()
 {
 }
 
+physx::PxScene& PhysXScene::GetScene()
+{
+	return *m_scene;
+}
+
 void PhysXScene::ActivatePvd()
 {
 	auto pvdClient = m_scene->getScenePvdClient();
