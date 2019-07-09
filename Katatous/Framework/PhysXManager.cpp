@@ -29,9 +29,19 @@ void PhysXManager::Initialize(GameContext& context)
 
 void PhysXManager::Update(GameContext& context)
 {
-	//gScene->simulate(1.0f / 60.0f);
-	m_scene->simulate(float(context.GetTimer().GetElapsedSeconds()));
-	m_scene->fetchResults(true);
+	auto num = m_physics->getNbScenes();
+	if (num)
+	{
+		std::vector<physx::PxScene*> scenes(num);
+		m_physics->getScenes(&scenes[0], num);
+
+		for (auto& scene : scenes)
+		{
+			//scene->simulate(1.0f / 60.0f);
+			scene->simulate(float(context.GetTimer().GetElapsedSeconds()));
+			scene->fetchResults(true);
+		}
+	}
 }
 
 void PhysXManager::Render(GameContext& context)

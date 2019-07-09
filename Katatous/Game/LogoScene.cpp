@@ -27,10 +27,10 @@ void LogoScene::Build(GameContext& context)
 		{
 			float time = float(context.GetTimer().GetTotalSeconds()) - lastTime;
 
-			wchar_t str[256];
-			std::swprintf(str, L"ÉçÉSÉVÅ[Éì: %.2fïb", time);
+			std::wostringstream sb;
+			sb << L"ÉçÉSÉVÅ[Éì: " << std::setprecision(2) << time << L"ïb";
 
-			m_text->SetText(str);
+			m_text->SetText(sb.str());
 
 			if (time > 3.f)
 				context.GetSceneManager().LoadScene("TitleScene");

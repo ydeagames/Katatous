@@ -265,7 +265,7 @@ void DeviceResources::CreateWindowSizeDependentResources()
 
 	// 現環境で使用できるMSAAをチェック
 	DXGI_SAMPLE_DESC sampleDesc = {};
-	for (int i = 1; i <= D3D11_MAX_MULTISAMPLE_SAMPLE_COUNT; i <<= 1)
+	for (int i = 1; i <= 4 /*D3D11_MAX_MULTISAMPLE_SAMPLE_COUNT*/; i <<= 1)
 	{
 		UINT Quality;
 		if (SUCCEEDED(m_d3dDevice->CheckMultisampleQualityLevels(DXGI_FORMAT_D24_UNORM_S8_UINT, i, &Quality)))

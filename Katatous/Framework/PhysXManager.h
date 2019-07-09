@@ -11,14 +11,13 @@ private:
 	physx::PxDefaultAllocator						m_allocator;
 	physx::PxDefaultErrorCallback					m_errorCallback;
 
-	px_unique_ptr<physx::PxFoundation>				m_foundation;
-	px_unique_ptr<physx::PxPhysics>					m_physics;
+	px_unique_ptr<physx::PxPvdTransport>			m_pvdTransport;
+	px_unique_ptr<physx::PxPvd>						m_pvd;
 
 	px_unique_ptr<physx::PxDefaultCpuDispatcher>	m_dispatcher;
-	px_unique_ptr<physx::PxScene>					m_scene;
 
-	px_unique_ptr<physx::PxPvd>						m_pvd;
-	px_unique_ptr<physx::PxPvdTransport>			m_pvdTransport;
+	px_unique_ptr<physx::PxPhysics>					m_physics;
+	px_unique_ptr<physx::PxFoundation>				m_foundation;
 
 public:
 	PhysXManager();

@@ -13,7 +13,7 @@ Scene::~Scene()
 {
 }
 
-void Scene::AddObject(const std::shared_ptr<GameObject>& obj)
+void Scene::Add(const std::shared_ptr<GameObject>& obj)
 {
 	gameObjects.push_back(obj);
 }

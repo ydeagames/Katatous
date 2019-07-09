@@ -5,10 +5,6 @@
 class GameContext;
 class Component;
 
-namespace
-{
-}
-
 template <typename T>
 struct hasParent {
 private:
