@@ -138,6 +138,12 @@
       <Filter>Framework</Filter>
     </ClInclude>
     <ClInclude Include="Framework\PhysXScene.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Object.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\SerializedField.h">
       <Filter>Framework</Filter>
     </ClInclude>
   </ItemGroup>
@@ -211,6 +217,9 @@
       <Filter>Framework</Filter>
     </ClCompile>
     <ClCompile Include="Framework\PhysXScene.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\SerializedField.cpp">
       <Filter>Framework</Filter>
     </ClCompile>
   </ItemGroup>
