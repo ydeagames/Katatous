@@ -10,7 +10,9 @@ class Scene : public Component
 {
 public:
 	// 子ゲームオブジェクト
-	std::vector<std::shared_ptr<GameObject>> gameObjects;
+	std::list<std::shared_ptr<GameObject>> gameObjects;
+	// 子ゲームオブジェクト
+	std::list<std::shared_ptr<GameObject>> addingObjects;
 	// PhysX
 	std::unique_ptr<PhysXScene> physics;
 

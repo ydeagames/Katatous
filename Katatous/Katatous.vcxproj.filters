@@ -146,6 +146,9 @@
     <ClInclude Include="Framework\SerializedField.h">
       <Filter>Framework</Filter>
     </ClInclude>
+    <ClInclude Include="Utilities\Property.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
@@ -157,9 +160,6 @@
       <Filter>Framework</Filter>
     </ClCompile>
     <ClCompile Include="Framework\SceneManager.cpp">
-      <Filter>Framework</Filter>
-    </ClCompile>
-    <ClCompile Include="Framework\Transform.cpp">
       <Filter>Framework</Filter>
     </ClCompile>
     <ClCompile Include="Common\DeviceResources.cpp">

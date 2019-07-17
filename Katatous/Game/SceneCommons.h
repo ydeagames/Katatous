@@ -1,5 +1,6 @@
 #pragma once
 #include <Framework/GameObject.h>
+#include <Framework/Component.h>
 #include <Framework/GameContext.h>
 #include <Framework/GameCamera.h>
 

@@ -1,9 +1,9 @@
 #pragma once
 #include "Transform.h"
+#include "Component.h"
 #include <Utilities/TypeId.h>
 
 class GameContext;
-class Component;
 
 template <typename T>
 struct hasParent {
@@ -25,6 +25,7 @@ private:
 
 public:
 	std::shared_ptr<Transform> transform;
+	bool destroyed;
 
 private:
 	struct Impl
@@ -71,12 +72,18 @@ public:
 
 private:
 	GameObject()
+		: destroyed(false)
 	{
 		transform = AddComponent<Transform>();
 	}
 
 public:
 	~GameObject() = default;
+
+	static void Destroy(GameObject& obj)
+	{
+		obj.destroyed = true;
+	}
 
 	static std::shared_ptr<GameObject> Create()
 	{

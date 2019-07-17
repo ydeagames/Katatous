@@ -22,6 +22,6 @@ void PlayScene::Build(GameContext& context)
 		[](GameContext& context) { return GeometricPrimitive::CreateTeapot(context.GetDR().GetD3DDeviceContext()); },
 		Color(Colors::Blue)
 		);
-	bitObj->transform->LocalPosition += Vector3::Up * 2;
+	bitObj->transform->localPosition += Vector3::Up * 2;
 	context << bitObj;
 }

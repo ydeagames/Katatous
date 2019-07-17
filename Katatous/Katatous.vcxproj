@@ -206,6 +206,7 @@
     <ClInclude Include="Utilities\MemoryLeakDetector.h" />
     <ClInclude Include="Utilities\Optional.h" />
     <ClInclude Include="Utilities\picojson.h" />
+    <ClInclude Include="Utilities\Property.h" />
     <ClInclude Include="Utilities\Random.h" />
     <ClInclude Include="Utilities\Singleton.h" />
     <ClInclude Include="Utilities\String.h" />
@@ -224,7 +225,6 @@
     <ClCompile Include="Framework\Scene.cpp" />
     <ClCompile Include="Framework\SceneManager.cpp" />
     <ClCompile Include="Framework\SerializedField.cpp" />
-    <ClCompile Include="Framework\Transform.cpp" />
     <ClCompile Include="Game\BaseScene.cpp" />
     <ClCompile Include="Game\BuildSettings.cpp" />
     <ClCompile Include="Game\LogoScene.cpp" />

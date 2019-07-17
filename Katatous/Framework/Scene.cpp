@@ -15,7 +15,7 @@ Scene::~Scene()
 
 void Scene::Add(const std::shared_ptr<GameObject>& obj)
 {
-	gameObjects.push_back(obj);
+	addingObjects.push_back(obj);
 }
 
 void Scene::Initialize(GameContext& context)
@@ -28,8 +28,14 @@ void Scene::Initialize(GameContext& context)
 
 void Scene::Update(GameContext& context)
 {
+	for (auto& object : addingObjects)
+		object->Initialize(context);
+	gameObjects.splice(gameObjects.end(), std::move(addingObjects));
+
 	for (auto& object : gameObjects)
 		object->Update(context);
+
+	gameObjects.remove_if(std::mem_fn(&GameObject::destroyed));
 }
 
 void Scene::Render(GameContext& context)
